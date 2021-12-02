@@ -50,7 +50,7 @@ Enter the directory where you downloaded the lsTool project and run lsTool.sh as
 
 Select your operating system.
 
-![img](https://drive.google.com/file/d/1fhP7skJUHKqSQNSYjONEt5QBHu8grYnm/view?usp=sharing)
+![01](https://drive.google.com/file/d/1fhP7skJUHKqSQNSYjONEt5QBHu8grYnm/view?usp=sharing)
 
 ### _**Step 4**_
 
