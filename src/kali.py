@@ -59,7 +59,9 @@ def createConfigFiles(img):
     readFile = open(f'{tempPath}/list.config', 'r');
 
     for line in readFile:
-      gresourceList.append(line.split(baseGR)[1].replace('\n', ''));
+      ext = line.split(baseGR)[1].replace('\n', '').split('.');      
+      if(ext[1] != 'jpg' and ext[1] != 'jpeg' and ext[1] != 'png'):
+        gresourceList.append(line.split(baseGR)[1].replace('\n', ''));
 
     for resource in gresourceList:
       os.system(f'gresource extract {gresource} {baseGR}{resource} > {tempPath}/{resource}');
