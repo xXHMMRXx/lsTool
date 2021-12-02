@@ -50,38 +50,46 @@ Enter the directory where you downloaded the lsTool project and run lsTool.sh as
 
 Select your operating system.
 
-![01](https://drive.google.com/file/d/1fhP7skJUHKqSQNSYjONEt5QBHu8grYnm/view?usp=sharing)
+![img](src/assets/readme/01.png)
+
+#
 
 ### _**Step 4**_
 
 Select one of the available options.
 Note: more options may be added in the future.
 
-![img](https://drive.google.com/file/d/1FhpIe0iWgbnrbMJUF6nmOoRcVMKUQGVg/view?usp=sharing)
+![img](src/assets/readme/02.png)
+
+#
 
 ### _**Change background (Image)**_
 
 Just select an image and the system will do the rest.
 
-![img](https://drive.google.com/file/d/1FhpIe0iWgbnrbMJUF6nmOoRcVMKUQGVg/view?usp=sharing)
+![img](src/assets/readme/02.png)
 
 #
 
-![img](https://drive.google.com/file/d/1XFGNq4E0_Ab7GQVRAn-GsnuKZCYEDxwk/view?usp=sharing)
+![img](src/assets/readme/03.png)
 
 #
 
-![img](https://drive.google.com/file/d/1vGIGUCoEbj2x7RxCk9RgbjgFqvhQkvEl/view?usp=sharing)
+![img](src/assets/readme/04.png)
+
+#
 
 ### _**Reset to default settings**_
 
 Just select option 2 from the main menu and the system will do the rest.
 
-![img](https://drive.google.com/file/d/1FhpIe0iWgbnrbMJUF6nmOoRcVMKUQGVg/view?usp=sharing)
+![img](src/assets/readme/02.png)
 
 #
 
-![img](https://drive.google.com/file/d/1sO4RofShVL8wYJDA5HKr5pRkpsKBeYvg/view?usp=sharing)
+![img](src/assets/readme/05.png)
+
+#
 
 ## _**Contact with me**_
 

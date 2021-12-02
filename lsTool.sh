@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
 # Created by xXHMMRXx. Support -> Telegram @xXHMMRXx
+# The lsTool is open-sourced software licensed under the GPLv3 license.
 
 # Colors
 Cyan='\e[0;36m'
