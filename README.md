@@ -38,7 +38,13 @@ If you do not have python installed you can do it with the following command:
 
 You need to download the lsTool project.
 
+#### _**Gitlab**_
+
 > $ git clone https://gitlab.com/xXHMMRXx/lsTool.git
+
+#### _**GitHub**_
+
+> $ git clone https://github.com/xXHMMRXx/lsTool.git
 
 ### _**Step 2**_
 
