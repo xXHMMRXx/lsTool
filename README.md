@@ -105,6 +105,26 @@ Just select option 2 from the main menu and the system will do the rest.
 
 #
 
+## _**Testing**_
+
+### _**Kali**_
+
+Test performed on the default kali linux installation.
+
+![img](src/assets/readme/test-kali-gnome-01.png)
+
+#
+
+### _**Obtained result**_
+
+![img](src/assets/readme/test-kali-gnome-02.png)
+
+#
+
+![img](src/assets/readme/test-kali-gnome-03.png)
+
+#
+
 ## _**Contact with me**_
 
 You can contact me directly through a private message to my [Telegram](https://telegram.org/) user @xXHMMRXx
