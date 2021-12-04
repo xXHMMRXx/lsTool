@@ -18,17 +18,25 @@ lsTool is a software created for the sole purpose of automating and facilitating
 
 ## _**Requirements**_
 
-You need to have python3 and zenity previously installed on your GNU/Linux operating system.
+You need to have python3, zenity and glib-compile-resources previously installed on your GNU/Linux operating system.
 
-### _**check python3 version**_
+### _**Check python3 version**_
 
 > $ python3 --version
 
 If you do not have python installed you can do it with the following command:
 
-> $ sudo apt-get update && sudo apt-get grade && sudo apt-get install python3.9
+> $ sudo apt update && sudo apt upgrade && sudo apt install python3.9
 
-### _**check zenity version**_
+### _**Check glib-compile-resources version**_
+
+> $ glib-compile-resources --version
+
+If you do not have glib-compile-resources installed you can do it with the following command:
+
+> $ sudo apt update && sudo apt upgrade && sudo apt install libglib2.0-dev-bin
+
+### _**Check zenity version**_
 
 > $ zenity --version
 

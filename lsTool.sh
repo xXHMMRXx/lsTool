@@ -161,6 +161,8 @@ function validators() {
     exit
   else 
     if [[ $(grep 'gdm' /etc/X11/default-display-manager) ]]; then
+      command -v glib-compile-resources > /dev/null 2>&1 || echo -e '\n\e[1;33m # Installing dependency (libglib2.0-dev-bin). please wait..\n\e[0m' && sudo apt install libglib2.0-dev-bin -y && echo -e '\n\033[1;92m # The installation was completed successfully.\n\e[0m'
+      sleep 3s
       main;
     else
       echo -e "\n\e[1;33m >>> Sorry :( <<<\e[0m\n\n\e[1;32m # This script does not yet support desktops other than GNOME, we are still working on adding new features. \e[0m"

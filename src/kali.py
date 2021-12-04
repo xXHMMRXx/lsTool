@@ -13,9 +13,13 @@ gresourceList = [];
 
 def compileAll():
   os.system(f'cd {tempPath} && glib-compile-resources {fileXML} && cp {targetFile} {gsPath}');
-  os.system('cd /tmp/ && rm -rf gs-custom/');
-  print(' Done.\n');
-  print(' # you can now restart your computer or simply switch to another user to see the changes made :D');
+  
+  if(os.path.exists(tempPath+'/'+targetFile)):
+    os.system('cd /tmp/ && rm -rf gs-custom/');
+    print(' Done.\n');
+    print(' # you can now restart your computer or simply switch to another user to see the changes made :D');
+  else:
+    print(' Sorry :(\n Something went wrong, please try again or contact the developer.');
 
 def customCSS(fileName):
   trigger = 0;
