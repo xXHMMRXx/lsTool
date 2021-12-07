@@ -12,9 +12,10 @@ lsTool is a software created for the sole purpose of automating and facilitating
 
 ## _**List of supported GNU/Linux distributions and desktops**_
 
-| OS                            | Desktops                        |
-| ----------------------------- | ------------------------------- |
-| [Kali](https://www.kali.org/) | [Gnome](https://www.gnome.org/) |
+| OS                                | Desktops                        |
+| --------------------------------- | ------------------------------- |
+| [Kali](https://www.kali.org/)     | [Gnome](https://www.gnome.org/) |
+| [Debian](https://www.debian.org/) | [Gnome](https://www.gnome.org/) |
 
 ## _**Requirements**_
 
@@ -109,7 +110,7 @@ Just select option 2 from the main menu and the system will do the rest.
 
 ### _**Kali**_
 
-Test performed on the default kali linux installation.
+Test performed on the default Kali installation.
 
 ![img](src/assets/readme/test-kali-gnome-01.png)
 
@@ -122,6 +123,24 @@ Test performed on the default kali linux installation.
 #
 
 ![img](src/assets/readme/test-kali-gnome-03.png)
+
+#
+
+### _**Debian**_
+
+Test performed on the default Debian installation.
+
+![img](src/assets/readme/test-debian-gnome-01.png)
+
+#
+
+### _**Obtained result**_
+
+![img](src/assets/readme/test-debian-gnome-02.png)
+
+#
+
+![img](src/assets/readme/test-debian-gnome-03.png)
 
 #
 
