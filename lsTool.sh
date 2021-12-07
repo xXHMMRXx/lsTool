@@ -51,6 +51,32 @@ spinner10=(' ::::::::::::::::::::::::::::::'
 ' :::::::::::::::::::::::::::::: \e[1;33m>>> ¡Created by \e[1;32mxXHMMRXx\e[1;33m! \e[1;33m<<< ' 
 '\e[1;36m :::::::::::::::::::::::::::::: \e[1;33m>>> ¡Created by \e[1;32mxXHMMRXx\e[1;33m!\e[1;36m \e[1;33m<<<\e[1;36m ::::::::::::::::::::::::::::::\e[0m\n\n\n')
 
+# >>> debian >>>
+function debian() {
+  read opt
+  
+  if [ $opt == 1 ]; then
+    img=$(zenity --file-filter=""*.png" "*.jpg" "*.jpeg"" --title="Choose Image .PNG or .JPG" --file-selection --filename="/home/"$USER"/" 2>/dev/null)
+    if [ $img ]; then
+      python3 src/main.py --os 'debian' --option $opt --img $img
+    else 
+      echo -e '\e[1;31m\n # Please select an image\n\033[00m'
+      sleep 3s
+      banner02;
+      debian;
+    fi
+  elif [ $opt == 2 ]; then
+    python3 src/main.py --os 'debian' --option $opt
+  elif [ $opt == 3 ]; then
+    main;
+  elif [ $opt != 1 ] || [ $opt != 2 ] || [ $opt != 3 ] ; then
+    banner02 'debian';
+    debian;
+  fi
+
+}
+# <<< debian <<<
+
 # >>> Kali >>>
 function kali() {
   read opt
@@ -70,7 +96,7 @@ function kali() {
   elif [ $opt == 3 ]; then
     main;
   elif [ $opt != 1 ] || [ $opt != 2 ] || [ $opt != 3 ] ; then
-    banner02 'kali linux';
+    banner02 'kali';
     kali;
   fi
 
@@ -81,16 +107,23 @@ function kali() {
 function setOS() {
   read opt 
   if [ $opt == 1 ]; then
-    if [ $(uname -n) == 'kali' ] || [ $(uname -n) == 'Kali' ]; then
-      banner02 'kali linux';
+    if [[ $(hostnamectl | grep 'Operating System: Kali') ]]; then
+      banner02 'kali';
       kali;
     else
-      echo -e '\n\n\e[1;33m # Your operating system is not yet supported, please contact us to add your operating system as soon as possible.\e[0m\n\n\e[1;32m Telegram: @xXHMMRXx \e[0m'
+      echo -e '\n\n\e[1;33m # Operating system selected is incorrect or your operating system is not yet supported, please contact us to add your operating system as soon as possible.\e[0m\n\n\e[1;32m Telegram: @xXHMMRXx \e[0m'
     fi
   elif [ $opt == 2 ]; then
+    if [[ $(hostnamectl | grep 'Operating System: Debian') ]]; then
+      banner02 'Debian';
+      debian;
+    else
+      echo -e '\n\n\e[1;33m # Operating system selected is incorrect or your operating system is not yet supported, please contact us to add your operating system as soon as possible.\e[0m\n\n\e[1;32m Telegram: @xXHMMRXx \e[0m'
+    fi
+  elif [ $opt == 3 ]; then
     echo -e '\n\n # GoodBye :D \n'
     exit
-  elif [ $opt != 1 ] || [ $opt != 2 ]; then
+  elif [ $opt != 1 ] || [ $opt != 2 ] || [ $opt != 3 ]; then
     main;
   fi
 }
@@ -139,8 +172,9 @@ function banner01() {
     done
 
   echo -e '\e[33m # Please select your operating system. \e[0m\n\n' 
-  echo -e $RojoClaro"    [$Blanco"1"$RojoClaro]$okegreen Kali Linux"
-  echo -e $RojoClaro"    [$Blanco"2"$RojoClaro]$okegreen Exit"
+  echo -e $RojoClaro"    [$Blanco"1"$RojoClaro]$okegreen Kali"
+  echo -e $RojoClaro"    [$Blanco"2"$RojoClaro]$okegreen Debian"
+  echo -e $RojoClaro"    [$Blanco"3"$RojoClaro]$okegreen Exit"
   echo -e $okegreen"\n\n    ┌─["$RojoClaro"Option$okegreen]──[$RojoClaro~$okegreen]─[\e[1;33mOperating System$okegreen]:"
           echo -ne $okegreen"    └─────► "
 
@@ -157,13 +191,14 @@ function main() {
 # >>> Initial validator >>>
 function validators() {
   if [[ $(id -u) != 0 ]]; then
-    echo -e "\n\e[1;33m >>> It's necessary to run the script as root user <<<\e[0m\n\n\e[1;32m $ sudo ./lsTool.sh \e[0m"
+    echo -e "\n\e[1;33m >>> It's necessary to run the script as root user <<<\e[0m\n\n\e[1;32m $ sudo ./lsTool.sh \n\e[0m"
     exit
   else 
     if [[ $(grep 'gdm' /etc/X11/default-display-manager) ]]; then
-      command -v python3 --version > /dev/null 2>&1 || echo -e '\n\e[1;33m # Installing dependency (python3). please wait..\n\e[0m' && sudo apt install python3.9 -y && echo -e '\n\033[1;92m # The installation was completed successfully.\n\e[0m'
+      echo -e '\n\033[1;92m # Please wait...\e[0m\n'
+      command python3 --version > /dev/null 2>&1 || (echo -e '\n\e[1;33m # Installing dependency (python3). please wait..\n\e[0m' && sudo apt install python3.9 -y && echo -e '\n\033[1;92m # The installation was completed successfully.\n\e[0m')
       sleep 1s
-      command -v glib-compile-resources > /dev/null 2>&1 || echo -e '\n\e[1;33m # Installing dependency (libglib2.0-dev-bin). please wait..\n\e[0m' && sudo apt install libglib2.0-dev-bin -y && echo -e '\n\033[1;92m # The installation was completed successfully.\n\e[0m'
+      command glib-compile-resources --version > /dev/null 2>&1 || (echo -e '\n\e[1;33m # Installing dependency (libglib2.0-dev-bin). please wait..\n\e[0m' && sudo apt install libglib2.0-dev-bin -y && echo -e '\n\033[1;92m # The installation was completed successfully.\n\e[0m')
       sleep 3s
       main;
     else
