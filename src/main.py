@@ -1,6 +1,7 @@
 import argparse;
 import kali;
 import debian;
+import ubuntu;
 
 parser = argparse.ArgumentParser('python3 main.py');
 parser.add_argument('--os', required=True, type=str, help='Operating system');
@@ -13,6 +14,8 @@ def main():
     kali.main(args.option, args.img);
   elif (args.os == 'debian'):
     debian.main(args.option, args.img);
+  elif (args.os == 'ubuntu'):
+    ubuntu.main(args.option, args.img);
 
 
 if __name__=='__main__':

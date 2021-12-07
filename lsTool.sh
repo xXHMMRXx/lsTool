@@ -51,6 +51,32 @@ spinner10=(' ::::::::::::::::::::::::::::::'
 ' :::::::::::::::::::::::::::::: \e[1;33m>>> ¡Created by \e[1;32mxXHMMRXx\e[1;33m! \e[1;33m<<< ' 
 '\e[1;36m :::::::::::::::::::::::::::::: \e[1;33m>>> ¡Created by \e[1;32mxXHMMRXx\e[1;33m!\e[1;36m \e[1;33m<<<\e[1;36m ::::::::::::::::::::::::::::::\e[0m\n\n\n')
 
+# >>> ubuntu >>>
+function ubuntu() {
+  read opt
+  
+  if [ $opt == 1 ]; then
+    img=$(zenity --file-filter=""*.png" "*.jpg" "*.jpeg"" --title="Choose Image .PNG or .JPG" --file-selection --filename="/home/"$USER"/" 2>/dev/null)
+    if [ $img ]; then
+      python3 src/main.py --os 'ubuntu' --option $opt --img $img
+    else 
+      echo -e '\e[1;31m\n # Please select an image\n\033[00m'
+      sleep 3s
+      banner02;
+      ubuntu;
+    fi
+  elif [ $opt == 2 ]; then
+    python3 src/main.py --os 'ubuntu' --option $opt
+  elif [ $opt == 3 ]; then
+    main;
+  elif [ $opt != 1 ] || [ $opt != 2 ] || [ $opt != 3 ] ; then
+    banner02 'Ubuntu';
+    ubuntu;
+  fi
+
+}
+# <<< debian <<<
+
 # >>> debian >>>
 function debian() {
   read opt
@@ -70,7 +96,7 @@ function debian() {
   elif [ $opt == 3 ]; then
     main;
   elif [ $opt != 1 ] || [ $opt != 2 ] || [ $opt != 3 ] ; then
-    banner02 'debian';
+    banner02 'Debian';
     debian;
   fi
 
@@ -96,7 +122,7 @@ function kali() {
   elif [ $opt == 3 ]; then
     main;
   elif [ $opt != 1 ] || [ $opt != 2 ] || [ $opt != 3 ] ; then
-    banner02 'kali';
+    banner02 'Kali';
     kali;
   fi
 
@@ -108,7 +134,7 @@ function setOS() {
   read opt 
   if [ $opt == 1 ]; then
     if [[ $(hostnamectl | grep 'Operating System: Kali') ]]; then
-      banner02 'kali';
+      banner02 'Kali';
       kali;
     else
       echo -e '\n\n\e[1;33m # Operating system selected is incorrect or your operating system is not yet supported, please contact us to add your operating system as soon as possible.\e[0m\n\n\e[1;32m Telegram: @xXHMMRXx \e[0m'
@@ -121,9 +147,16 @@ function setOS() {
       echo -e '\n\n\e[1;33m # Operating system selected is incorrect or your operating system is not yet supported, please contact us to add your operating system as soon as possible.\e[0m\n\n\e[1;32m Telegram: @xXHMMRXx \e[0m'
     fi
   elif [ $opt == 3 ]; then
+    if [[ $(hostnamectl | grep 'Operating System: Ubuntu') ]]; then
+      banner02 'Ubuntu';
+      ubuntu;
+    else
+      echo -e '\n\n\e[1;33m # Operating system selected is incorrect or your operating system is not yet supported, please contact us to add your operating system as soon as possible.\e[0m\n\n\e[1;32m Telegram: @xXHMMRXx \e[0m'
+    fi
+  elif [ $opt == 4 ]; then
     echo -e '\n\n # GoodBye :D \n'
     exit
-  elif [ $opt != 1 ] || [ $opt != 2 ] || [ $opt != 3 ]; then
+  elif [ $opt != 1 ] || [ $opt != 2 ] || [ $opt != 3 ] || [ $opt != 4 ]; then
     main;
   fi
 }
@@ -174,7 +207,8 @@ function banner01() {
   echo -e '\e[33m # Please select your operating system. \e[0m\n\n' 
   echo -e $RojoClaro"    [$Blanco"1"$RojoClaro]$okegreen Kali"
   echo -e $RojoClaro"    [$Blanco"2"$RojoClaro]$okegreen Debian"
-  echo -e $RojoClaro"    [$Blanco"3"$RojoClaro]$okegreen Exit"
+  echo -e $RojoClaro"    [$Blanco"3"$RojoClaro]$okegreen Ubuntu"
+  echo -e $RojoClaro"    [$Blanco"4"$RojoClaro]$okegreen Exit"
   echo -e $okegreen"\n\n    ┌─["$RojoClaro"Option$okegreen]──[$RojoClaro~$okegreen]─[\e[1;33mOperating System$okegreen]:"
           echo -ne $okegreen"    └─────► "
 
