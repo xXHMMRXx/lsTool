@@ -41,7 +41,7 @@ def customCSS(fileName):
     textToReplace = content[temp:(temp + count - 1)];
     newText = "#lockDialogGroup { background: url(resource:///org/gnome/shell/theme/"+ fileName + "); background-size: cover; background-repeat: no-repeat; background-position: center; }"
 
-    newFile = open(os.path.join(tempPath+'/'+css), 'w');
+    newFile = open(os.path.join(tempPath+'/'+sFName), 'w');
     newContent = content.replace(textToReplace, newText);
     newFile.write(newContent);
     newFile.close();
