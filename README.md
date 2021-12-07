@@ -16,6 +16,7 @@ lsTool is a software created for the sole purpose of automating and facilitating
 | --------------------------------- | ------------------------------- |
 | [Kali](https://www.kali.org/)     | [Gnome](https://www.gnome.org/) |
 | [Debian](https://www.debian.org/) | [Gnome](https://www.gnome.org/) |
+| [Ubuntu](https://ubuntu.com/)     | [Gnome](https://www.gnome.org/) |
 
 ## _**Requirements**_
 
@@ -144,9 +145,42 @@ Test performed on the default Debian installation.
 
 #
 
+### _**Ubuntu**_
+
+Test performed on the default Ubuntu installation.
+
+![img](src/assets/readme/test-ubuntu-gnome-01.png)
+
+#
+
+### _**Obtained result**_
+
+![img](src/assets/readme/test-ubuntu-gnome-02.png)
+
+#
+
+![img](src/assets/readme/test-ubuntu-gnome-03.png)
+
+#
+
 ## _**Contact with me**_
 
 You can contact me directly through a private message to my [Telegram](https://telegram.org/) user @xXHMMRXx
+
+## _**Would you like to make a donation?**_
+
+### _**Bitcoin**_
+
+BTC: 16Epnsu5XZGKLjD6a1vAZ6n3DaatUYDKdu
+
+### _**Litecoin**_
+
+Note: The minimum amount is 0.001 LTC otherwise the deposit will be forfeited.
+LTC: LTGYX1NDFVdWw4SFYnsfKM4fD7RiQSjeKR
+
+### _**Ethereum**_
+
+ETH: 0x2ce48fc2a70b9f2423c9e80732eee39dc8fb4317
 
 ## _**License**_
 
