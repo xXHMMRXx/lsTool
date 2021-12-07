@@ -3,7 +3,7 @@ from posixpath import split;
 
 css = ['gnome-shell.css', 'gdm3.css']
 tempPath = '/tmp/gs-custom';
-gsPath = '/usr/share/gnome-shell/theme/Yaru';
+gsPath = '/usr/share/gnome-shell';
 backup = '/usr/share/original-gnome-shell';
 gresource = '/usr/share/gnome-shell/gnome-shell-theme.gresource';
 baseGR = '/org/gnome/shell/theme/';
@@ -12,7 +12,7 @@ targetFile = 'gnome-shell-theme.gresource';
 gresourceList = [];
 
 def compileAll():
-  os.system(f'cd {tempPath} && glib-compile-resources {fileXML} && cp {targetFile} {gsPath}');
+  os.system(f'cd {tempPath} && glib-compile-resources {fileXML} && cp {targetFile} {gsPath + "/theme/Yaru"}');
   
   if(os.path.exists(tempPath+'/'+targetFile)):
     os.system('cd /tmp/ && rm -rf gs-custom/');
