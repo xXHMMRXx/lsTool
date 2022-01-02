@@ -53,12 +53,16 @@ def createConfigFiles(img):
 
     image = img;
     array = image.split('/');
-    fileName = array[len(array) - 1];
+    fName = array[len(array) - 1];
+    fileName = fName.replace('\\', '');
+    ext = fileName.split('.');
+    newFileName = f'image.{ext[1]}';
 
     os.system('mkdir -p /tmp/gs-custom/icons/scalable/status');
     os.system('mkdir /tmp/gs-custom/icons/scalable/actions');
     os.system(f'gresource list {gsPath}/gnome-shell-theme.gresource > {tempPath}/list.config');
     os.system(f'cp {image} {tempPath}/');
+    os.system(f'mv {tempPath}/{fName} {tempPath}/image.{ext[1]}');
 
     readFile = open(f'{tempPath}/list.config', 'r');
 
@@ -77,12 +81,12 @@ def createConfigFiles(img):
     for resource in gresourceList:
       os.system(f"echo '    <file>{resource}</file>' >> {tempPath}/{fileXML}");
       if(resource == 'gnome-shell.css'):
-        os.system(f"echo '    <file>{fileName}</file>' >> {tempPath}/{fileXML}");
+        os.system(f"echo '    <file>{newFileName}</file>' >> {tempPath}/{fileXML}");
 
     os.system(f"echo '  </gresource>' >> {tempPath}/{fileXML}");
     os.system(f"echo '</gresources>' >> {tempPath}/{fileXML}");
 
-    customCSS(fileName);
+    customCSS(newFileName);
 
 def backupGnomeShell():
   if (os.path.exists(backup)):

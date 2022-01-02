@@ -108,10 +108,11 @@ function kali() {
   read opt
   
   if [ $opt == 1 ]; then
-    img=$(zenity --file-filter=""*.png" "*.jpg" "*.jpeg"" --title="Choose Image .PNG or .JPG" --file-selection --filename="/home/"$USER"/" 2>/dev/null)
-    if [ $img ]; then
-      python3 src/main.py --os 'kali' --option $opt --img $img
-    else 
+    img=$(zenity --file-filter=""*.png" "*.jpg"" --title="Choose Image .PNG or .JPG" --file-selection --filename="/home/"$USER"/" 2>/dev/null | sed -e "s/ /\\\ /g")
+    if [[ $img != "" ]]; then
+      python3 src/main.py --os 'kali' --option $opt --img "$img"
+      #echo $img
+    else
       echo -e '\e[1;31m\n # Please select an image\n\033[00m'
       sleep 3s
       banner02;
